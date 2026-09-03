@@ -18,7 +18,6 @@ public class ThreadPriority {
         Thread four = new Thread(() ->{
             System.out.println(Thread.currentThread().getName()+" Hello From four!");
         });
-
         four.setPriority(Thread.MAX_PRIORITY);
         three.setPriority(Thread.MIN_PRIORITY);
 
