@@ -28,8 +28,8 @@ public class JoinThreadDemo {
          them in the runnable state and then executes the last line (print line).
          Then the cpu becomes free to execute a thread, thereby the threads t1 and t2 are executed at the end.
 
-         So what's the solution to get the other threads executed before the main threa?
-         --> There comes .join() method.
+         So what's the solution to get the other threads executed before the main thread?
+         --> There comes .join() method. It pauses the main thread until the thread which is join get's executed.
          */
     }
 }
