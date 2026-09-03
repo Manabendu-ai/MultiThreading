@@ -103,4 +103,7 @@ In that case each thread will completely be executed on the cpu assigned to it. 
 | We can build responseive applications | Synchronization is tricky           |
 | Better resource utilization           | Difficult to design & Test MT Apps. |
 | Better performance application        | Thread context switch is expensive. |
+---
+## Thread Lifecycle
+<img src="assests/thread-life-cycle.png">
 
