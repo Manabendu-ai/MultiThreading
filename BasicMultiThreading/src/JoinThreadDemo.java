@@ -1,5 +1,5 @@
 public class JoinThreadDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(()->{
             for(int i = 0; i<10; i++){
                 System.out.println("Thread One : "+ i);
@@ -13,6 +13,10 @@ public class JoinThreadDemo {
 
         t1.start();
         t2.start();
+
+        t1.join();
+        t2.join();
+
         // This print will be executed first bcoz JVM executes the main Thread first(highest priority).
         System.out.println("Finished Execution of thread!");
         /**
@@ -23,6 +27,9 @@ public class JoinThreadDemo {
          Here the main thread is first creating the objects of t1 and t2 and then when it reaches the t1.start() and t2.start() it puts
          them in the runnable state and then executes the last line (print line).
          Then the cpu becomes free to execute a thread, thereby the threads t1 and t2 are executed at the end.
+
+         So what's the solution to get the other threads executed before the main threa?
+         --> There comes .join() method.
          */
     }
 }
