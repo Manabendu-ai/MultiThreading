@@ -46,3 +46,21 @@ methods in another thread(). This way we are not freezing the execution of our p
 
 ### Define Multithreading
 Multithreading is the ability of the cpu to perform different tasks concurrently.
+
+--- 
+## Concurrency Vs Parallelism
+### Defining concurrency:
+> It is like having many task to perform at a given time, but you only have one set of hands to perform the task.
+> <br> So you switch between the tasks, doing a little bit of each one at a time.
+> <br> eg: playing guitar, where you play different nodes and chords with your line finger. Even though you play
+> each node separately the switch is so fast and smooth that it feels like each node is being played together.
+
+### Defining Parallelism:
+> parallelism on the other hand is also having many tasks to perform at a given time, but now you have some friends
+> to help you out.<br>Where the task gets divided between the friends working in parallel.<br>Here all the tasks are completed faster.
+
+### Recap:
+>Concurrency is doing multiple tasks all at once by quickly switching between the tasks.
+> <br> Whereas, multithreading is also performing multiple task all at once, but the tasks are split between
+> multiple threads, all performing simultaneously.
+> 
