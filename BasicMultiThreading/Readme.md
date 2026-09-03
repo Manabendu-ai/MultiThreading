@@ -19,3 +19,15 @@
 * It's allows one thread to pause its execution until another thread (the one it's "joining") has finished.
   In more technical terms, when a thread calls join() on another thread, the calling thread goes into a waiting state until the
   target thread terminates. Once the target thread dies, the waiting thread can resume.
+
+---
+### Daemon and User Threads
+* On the basis of surface of execution threads can be divided into two types:
+  * Daemon Thread --> usually runs in the background.
+  * User Thread --> they are the active threads.
+* When a Java Program starts the main thread starts running immediately. We can start child threads from the main thread.
+  Main thread is the last thread to get executed under normal circumstances, bcoz it has to perform various shutdown operations.
+* Daemon Threads are intended to be helper threads which can run in the background and are of low priority. Eg GC thread.
+* Daemon Threads are terminated by the JVM when all other user threads are terminated (done with their execution).
+* So under normal conditions, user threads are allowed to terminate once they are done with their execution, however, the daemon threads
+  are shutdown by the JVM once all the other threads are done executing.
