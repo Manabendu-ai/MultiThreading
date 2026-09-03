@@ -8,9 +8,15 @@ public class RunnableThreadExample {
     public static void main(String[] args) {
         Thread t1 = new Thread(new ThreadOne());
         Thread t2 = new Thread(new ThreadTwo());
+        Thread t3 = new Thread(() -> {
+            for(int i=0; i<15; i++){
+                System.out.println("Thread Three : "+ i);
+            }
+        });
 
         t1.start();
         t2.start();
+        t3.start();
     }
 
     /**
