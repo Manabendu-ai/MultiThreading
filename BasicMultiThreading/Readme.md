@@ -31,3 +31,12 @@
 * Daemon Threads are terminated by the JVM when all other user threads are terminated (done with their execution).
 * So under normal conditions, user threads are allowed to terminate once they are done with their execution, however, the daemon threads
   are shutdown by the JVM once all the other threads are done executing.
+
+---
+### Thread Priority
+* Let's say there are 10 threads in runnable state, however there is only one available cpu, so only one thread can execute at a given time
+  and others will have to wait. So who decides which thread gets to run on the CPU. This component is called Thread Scheduler.
+* Each Thread has certain priority and under normal circumstances thread with the higher priority gets to run on the cpu.
+* Priority value from 1 to 10 can be assigned to any thread. 1 priority is represented as MIN_PRIORITY and 10 is represented as MAX_PRIORITY
+  which is the highest priority. By default, the priority of a thread is 5, it's represented as NORM_PRIORITY.
+* Thread of the same priority value are executed in FIFO manner. The thread scheduler stores the thread in a queue.
