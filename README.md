@@ -63,4 +63,13 @@ Multithreading is the ability of the cpu to perform different tasks concurrently
 >Concurrency is doing multiple tasks all at once by quickly switching between the tasks.
 > <br> Whereas, multithreading is also performing multiple task all at once, but the tasks are split between
 > multiple threads, all performing simultaneously.
-> 
+
+---
+## Process vs Threads
+### Process:
+> Process is an instance of a program execution. When you enter an application it is process.
+> <br>The OS assigns its own stack & heap memory area.
+
+### Thread
+> Thread is a smallest unit of execution within a program. It is a lightweight process.
+> <br>A single process may contain multiple threads. Each thread shares the memory and resources.
