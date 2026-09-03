@@ -15,7 +15,7 @@ public class JoinThreadDemo {
         t2.start();
 
         t1.join();
-        t2.join();
+
 
         // This print will be executed first bcoz JVM executes the main Thread first(highest priority).
         System.out.println("Finished Execution of thread!");
@@ -30,6 +30,7 @@ public class JoinThreadDemo {
 
          So what's the solution to get the other threads executed before the main thread?
          --> There comes .join() method. It pauses the main thread until the thread which is join get's executed.
+         --> for e.g if thread1.join() --> until the thread1 is completing its execution the main thread will not be executed.
          */
     }
 }
