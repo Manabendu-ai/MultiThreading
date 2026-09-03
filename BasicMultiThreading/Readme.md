@@ -40,3 +40,4 @@
 * Priority value from 1 to 10 can be assigned to any thread. 1 priority is represented as MIN_PRIORITY and 10 is represented as MAX_PRIORITY
   which is the highest priority. By default, the priority of a thread is 5, it's represented as NORM_PRIORITY.
 * Thread of the same priority value are executed in FIFO manner. The thread scheduler stores the thread in a queue.
+* Even though the priority of main thread is 5 it is the first thread to get executed under any circumstance.
