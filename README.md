@@ -64,6 +64,9 @@ Multithreading is the ability of the cpu to perform different tasks concurrently
 > <br> Whereas, multithreading is also performing multiple task all at once, but the tasks are split between
 > multiple threads, all performing simultaneously.
 
+<br>
+<img src="assests/convspa.png">
+
 ---
 ## Process vs Threads
 ### Process:
@@ -73,3 +76,17 @@ Multithreading is the ability of the cpu to perform different tasks concurrently
 ### Thread
 > Thread is a smallest unit of execution within a program. It is a lightweight process.
 > <br>A single process may contain multiple threads. Each thread shares the memory and resources.
+
+<br>
+<img src="assests/provsth.png">
+
+---
+## Time Slicing Algorithm.
+Let's say we have `n` threads, associated with a process. Now the CPU must somehow ensure that all the threads
+are given a chance to execute. One such approach is to use time-slicing algorithm.
+<br>Usage time of the CPU is shared among different threads.
+<br>
+<img src="assests/timeslice2bg.jpg">
+### What if we have enough CPUs?
+In that case each thread will completely be executed on the cpu assigned to it. Parallel processing will take place.
+<br>e.g. we have 2 threads T1 and T2 along with two cpu cores C1 and C2. In this case T1 --> C1 and T2 --> C2.
