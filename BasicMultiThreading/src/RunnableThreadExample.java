@@ -27,6 +27,7 @@ public class RunnableThreadExample {
      --> when we start the two threads with .start() method, JVM puts the two threads into RUNNABLE or RUNNING state.
      --> Once the thread schedular finds the available spot for a particular thread to run on the cpu.
      --> It is assigned to the cpu, that's the time it is running.
+     --> After running the threads get terminated.
      --> For the time the thread is not assigned to a cpu, the thread has to wait. That is the main reason we are seeing
      a random order of execution.
      */

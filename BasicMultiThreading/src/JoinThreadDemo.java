@@ -10,7 +10,7 @@ public class JoinThreadDemo {
                 System.out.println("Thread Two : "+ i);
             }
         });
-
+        System.out.println("Before executing the threads...");
         t1.start();
         t2.start();
 
