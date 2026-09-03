@@ -94,3 +94,13 @@ are given a chance to execute. One such approach is to use time-slicing algorith
 ### What if we have enough CPUs?
 In that case each thread will completely be executed on the cpu assigned to it. Parallel processing will take place.
 <br>e.g. we have 2 threads T1 and T2 along with two cpu cores C1 and C2. In this case T1 --> C1 and T2 --> C2.
+
+---
+## Pros & Cons of MultiThreading.
+
+| Pros                                  | Cons                                |
+|---------------------------------------|-------------------------------------|
+| We can build responseive applications | Synchronization is tricky           |
+| Better resource utilization           | Difficult to design & Test MT Apps. |
+| Better performance application        | Thread context switch is expensive. |
+
