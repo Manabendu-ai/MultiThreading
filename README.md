@@ -1,3 +1,7 @@
+<p style="text-align:center;" align="center"><picture>
+<img src="assests/logo.png"
+alt="OldMonk Logo" width="20%" /></picture><br /><br /></p>
+<p align="center">
 <h1 align="center">
     MultiThreading For Backend Engineering
 </h1>
