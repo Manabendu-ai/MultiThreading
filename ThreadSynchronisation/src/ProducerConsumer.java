@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ class Worker{
     private int sequence = 0;
     private final int TOP = 5;
     private final int BOTTOM = 0;
-    private final List<Integer> container = new ArrayList<>();
+    private final LinkedList<Integer> container = new LinkedList<>();
     private final Object LOCK =  new Object();
 
 
@@ -25,7 +26,7 @@ class Worker{
                 } else{
                     System.out.println(sequence+" Added to the container!");
                     container.add(sequence++);
-                    LOCK.notify();
+                    LOCK.notify(); // this doesn't come into the picture immediately
                 }
                 Thread.sleep(1000);
             }
@@ -34,7 +35,16 @@ class Worker{
     }
 
     public void consume(){
-
+        synchronized (LOCK){
+            while(true){
+                if(container.size()==BOTTOM){
+                    System.out.println("Container is empty! Waiting for the producer to produce.");
+                }else{
+                    System.out.println(container.removeFirst()+" Consumed by the container");
+                    LOCK.notify();
+                }
+            }
+        }
     }
 }
 public class ProducerConsumer {
