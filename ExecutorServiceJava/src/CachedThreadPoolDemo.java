@@ -8,6 +8,11 @@ public class CachedThreadPoolDemo {
             service.execute(new Task1(i));
         }
         service.shutdown();
+        /*
+        Here the task queue can contain one task at max.
+        If all threads are busy a new thread is created and task is assigned to that thread.
+        If a thread is idle for more than 60 sec. It's killed.
+         */
     }
 }
 
