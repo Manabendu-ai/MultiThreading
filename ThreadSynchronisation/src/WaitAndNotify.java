@@ -31,7 +31,11 @@ public class WaitAndNotify {
             System.out.println("[LOG] Back in the method ONE...");
         }
     }
-
+    /*
+    Key difference between wait and sleep methods:
+    1) wait method is used for inter thread communication and synchronization purpose.
+    2) sleep method is used to pause the execution of a thread for a specific duration of time.
+     */
     public static void two() throws InterruptedException{
         synchronized (LOCK){
             System.out.println("[LOG] Entered method TWO....");
