@@ -48,7 +48,7 @@ class Worker {
 
 public class ProducerConsumer {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Worker worker = new Worker();
         Thread producer = new Thread(
                 () -> {
@@ -67,5 +67,11 @@ public class ProducerConsumer {
                 throw new RuntimeException(e);
             }
         });
+
+        producer.start();
+        consumer.start();
+
+        producer.join();
+        consumer.join();
     }
 }
