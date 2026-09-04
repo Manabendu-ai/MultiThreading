@@ -8,3 +8,7 @@
 * FixedThreadPoolExecutor
 * CachedThreadPool
 * ScheduledExecutor
+
+### Working of executor service
+
+<img src="assests/executor.png" width="40%">
