@@ -31,13 +31,13 @@ public class SynchronisationDemo {
     public static void main(String[] args) {
         Thread t1 = new Thread(()->{
             for (int i = 0; i < 10000; i++) {
-                counter++;
+                increment();
             }
         });
 
         Thread t2 = new Thread(()->{
             for (int i = 0; i < 10000; i++) {
-                counter++;
+                increment();
             }
         });
 
@@ -57,6 +57,10 @@ public class SynchronisationDemo {
     synchronized keyword tell JVM that at a given instant of time not more than one thread must be able to access this method.
      */
     private synchronized static void increment(){
+        // critical section
         counter++;
     }
+    /*
+    Now we see that we are getting the expected output that is 20000.
+     */
 }
