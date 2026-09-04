@@ -44,6 +44,8 @@ public class SynchronisationDemo {
          counter = 0; incrementValue = 1; <- Thread Two
 
          This is called race condition, in technical terms.
+         When we have a shared resource, and multiple thread working on the same shared resource and these kind of scenarios
+         lead to inconsistency which is called race condition.
          */
 
 
