@@ -8,6 +8,15 @@ public class SingleExecutorDemo {
             service.execute(new Task(i));
         }
         service.shutdown();
+        /*
+        The executor service internal working:
+        The thread pool has the task(0)-->task(n) stored in a queue in a sequential way.
+        Now in singleThreadExecutor there is only one thread in the Thread pool so
+        that will execute all the tasks sequentially.
+        Exceptionally in any case the thread got destroyed then the executor service will recreate the
+        thread and complete all the execution.
+
+         */
     }
 }
 
