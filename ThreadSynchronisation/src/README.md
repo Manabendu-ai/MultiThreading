@@ -15,3 +15,13 @@ When a thread exists after executing from the synchronized block it has to relea
 acquire the lock to proceed with there execution.
 
 So this synchronized keyword at the method level uses its own intrinsic lock implicitly
+
+### Problem's associated with synchronized at method level:
+* It uses a coarse grained locking.
+* i.e. it applies the lock on the entire method body
+* the critical section can be of fewer lines inside a method and not the entire method.
+* So blocking te entire method which has many lines of code other than critical section makes no sense.
+* This leads to reduced concurrency and bottlenecks.
+* We lose the fine-grained controls needed in more complex scenario.
+* When a subclass is inheriting a synchronized method from its superclass then it must explicitly declare that method as synchronized.
+    
