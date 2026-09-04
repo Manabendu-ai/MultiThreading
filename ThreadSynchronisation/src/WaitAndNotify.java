@@ -27,7 +27,7 @@ public class WaitAndNotify {
     public static void one() throws InterruptedException{
         synchronized (LOCK){
             System.out.println("[LOG] Entered method ONE....");
-            LOCK.wait(); // Thread calling this will be suspended
+            LOCK.wait(); // Thread calling this will be suspended and it will move in a waiting state
             System.out.println("[LOG] Back in the method ONE...");
         }
     }
@@ -35,7 +35,9 @@ public class WaitAndNotify {
     public static void two() throws InterruptedException{
         synchronized (LOCK){
             System.out.println("[LOG] Entered method TWO....");
-            LOCK.notify();
+            LOCK.notify(); // This is release the lock and notify other threads that they can acquire this lock.
+            // this .notify() will execute after executing the synchronized block, i.e. whatever is after the noity() will be executed
+            // and then only the lock will be released.
             System.out.println("[LOG] Hello after method TWO...");
         }
     }
