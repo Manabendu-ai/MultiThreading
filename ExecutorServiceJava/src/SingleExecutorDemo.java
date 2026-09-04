@@ -7,6 +7,7 @@ public class SingleExecutorDemo {
         for (int i = 0; i < 5; i++) {
             service.execute(new Task(i));
         }
+        service.shutdown();
     }
 }
 
