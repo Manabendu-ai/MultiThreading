@@ -26,18 +26,19 @@
 
 public class SynchronisationDemo {
 
-    private static int counter = 0;
+    private static int counter1 = 0;
+    private static int counter2 = 0;
 
     public static void main(String[] args) {
         Thread t1 = new Thread(()->{
             for (int i = 0; i < 10000; i++) {
-                increment();
+                increment1();
             }
         });
 
         Thread t2 = new Thread(()->{
             for (int i = 0; i < 10000; i++) {
-                increment();
+                increment2();
             }
         });
 
@@ -51,16 +52,32 @@ public class SynchronisationDemo {
             throw new RuntimeException(e);
         }
 
-        System.out.println("Counter value: "+counter);
+        System.out.println("Counter value: "+counter1+" -- "+counter2);
     }
     /*
     synchronized keyword tell JVM that at a given instant of time not more than one thread must be able to access this method.
      */
-    private synchronized static void increment(){
+    private synchronized static void increment1(){
         // critical section
-        counter++;
+        counter1++;
     }
     /*
     Now we see that we are getting the expected output that is 20000.
+     */
+    private synchronized static void increment2(){
+        // critical section
+        counter2++;
+    }
+    /*
+    See here both the threads t1 and t2 are associated with different synchronized methods inc1 and inc2.
+    But their is small issue here. see the t2 also have to wait until t1 completes it execution because:
+    synchronized method uses a class level lock.
+    No matter how many synchronized methods are there in a class all of them will have to share the same class level lock.
+    So other threads which have no means with the other synchronized block will have to wait for their turn to acquire that lock.
+    here:
+    if thread1 is executing first it will acquire the class level lock from the inc1() method and start executing.
+    But thread2 is also now waiting for that lock acquired by thread to enter into it's block that is inc2().
+    Which is unnecessary because thread has a complete different task to perform.
+    This is the major drawback of using synchronized at the method level.
      */
 }
