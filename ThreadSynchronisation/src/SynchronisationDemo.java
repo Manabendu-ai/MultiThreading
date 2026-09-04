@@ -46,6 +46,10 @@ public class SynchronisationDemo {
          This is called race condition, in technical terms.
          When we have a shared resource, and multiple thread working on the same shared resource and these kind of scenarios
          lead to inconsistency which is called race condition.
+
+         To avoid such kind of scenarios we can ensure that at a given time only one thread has the access to the shared resource.
+         So that way we can achieve that the shared resource is not being occupied by more than one thread at a time.
+         This is called Mutual exclusion.
          */
 
 
