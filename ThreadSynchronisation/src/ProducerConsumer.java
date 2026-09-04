@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * The Producer-Consumer problem is a synchronization scenario where one or more producer threads generate data and put into
