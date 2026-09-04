@@ -25,7 +25,7 @@ class Worker {
                     container.add(sequence++);
                     LOCK.notify(); // this doesn't come into the picture immediately
                 }
-                Thread.sleep(1000);
+                Thread.sleep(500);
             }
         }
 
@@ -34,13 +34,14 @@ class Worker {
     public void consume() throws InterruptedException {
         synchronized (LOCK) {
             while (true) {
-                if (container.size() == BOTTOM) {
+                if (container.isEmpty()) {
                     System.out.println("Container is empty! Waiting for the producer to produce.");
+                    LOCK.wait();
                 } else {
                     System.out.println(container.removeFirst() + " Consumed by the container");
                     LOCK.notify();
                 }
-                Thread.sleep(1000);
+                Thread.sleep(500);
             }
         }
     }
@@ -62,7 +63,7 @@ public class ProducerConsumer {
 
         Thread consumer = new Thread(() -> {
             try {
-                worker.produce();
+                worker.consume();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
