@@ -1,6 +1,6 @@
 ## Let's understand Synchronisation Deeper!
 
-In Java each object is associated with a monitor which is a mutual exclusion mechanism used for synchronization.
+In Java each object is associated with a monitor lock which is a mutual exclusion mechanism used for synchronization.
 <br>
 When a thread enters into a synchronized block it tries to access the monitor lock(intrinsic lock) associated with the object
 on which the synchronization is applied.
@@ -13,3 +13,5 @@ If the lock is available then the thread acquires it proceeds to execute it.
 
 When a thread exists after executing from the synchronized block it has to release the lock, this allows other threads waiting to
 acquire the lock to proceed with there execution.
+
+So this synchronized keyword at the method level uses its own intrinsic lock implicitly
