@@ -42,6 +42,10 @@ public class SynchronisationDemo {
          Therefore, there lies an inconsistency among the values.
          counter = 0; incrementValue = 1; <- Thread One
          counter = 0; incrementValue = 1; <- Thread Two
+
+         This is called race condition, in technical terms.
          */
+
+
     }
 }
