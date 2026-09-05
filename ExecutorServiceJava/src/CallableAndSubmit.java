@@ -26,8 +26,14 @@ public class CallableAndSubmit {
         }
 
         // getting the result from the future object
+        System.out.println("result: ");
         for(Future<Integer> num : res){
-
+            try{
+                int n = num.get();
+                System.out.print(n+" ");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
