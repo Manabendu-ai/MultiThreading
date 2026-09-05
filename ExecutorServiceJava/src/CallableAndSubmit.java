@@ -35,6 +35,7 @@ public class CallableAndSubmit {
                 throw new RuntimeException(e);
             }
         }
+        service.shutdownNow();
         System.out.println();
     }
 }
