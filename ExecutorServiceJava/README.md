@@ -27,14 +27,14 @@ It is used to submit a task for execution. The method does not return any result
 _submit()_ : The submit() method is a way to send a task (like a job or operation) to an ExecutorService for execution.
 This method is like telling a worker to do a job, but it’s different from just giving them the job and not expecting any feedback.
 
-<img src="assests/exevssub.png">
+<img src="../assests/exevssub.png">
 
 ### Working of executor service
 
-<img src="assests/executor-service.png" width="60%">
+<img src="../assests/executor-service.png" width="60%">
 
 ---
 
-<img src="assests/executor.png" width="40%">
+<img src="../assests/executor.png" width="40%">
 
 
