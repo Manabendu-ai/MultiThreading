@@ -13,6 +13,9 @@ public class CachedThreadPoolDemo {
         If all threads are busy a new thread is created and task is assigned to that thread.
         If a thread is idle for more than 60 sec. It's killed.
          */
+        /*
+        cached thread pool --> unlimited thread + no queue
+         */
     }
 }
 
