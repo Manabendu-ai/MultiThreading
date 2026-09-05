@@ -14,6 +14,11 @@ public class ScheduledExecutorDemo {
         } catch (InterruptedException e) {
             service.shutdownNow();
         }
+        /*
+        ScheduledThreadPoolExecutor : Allows you to execute task in the future.
+        It is very powerful as it allows to run task at fixed interval and also implements awaitTermination method.
+        Which terminates the executor after a fixed time.
+         */
     }
 }
 
