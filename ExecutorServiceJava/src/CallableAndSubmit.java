@@ -35,5 +35,6 @@ public class CallableAndSubmit {
                 throw new RuntimeException(e);
             }
         }
+        System.out.println();
     }
 }
